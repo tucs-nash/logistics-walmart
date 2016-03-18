@@ -3,7 +3,7 @@ package com.walmart.logistics.api.business.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.walmart.logistics.api.business.DijkstraAlgorithm;
+import com.walmart.logistics.api.business.DijkstraAlgorithmForWalmart;
 import com.walmart.logistics.api.business.LogisticsService;
 import com.walmart.logistics.api.model.BestRoute;
 import com.walmart.logistics.api.model.MapWalmart;
@@ -30,7 +30,7 @@ public class LogisticsServiceImpl implements LogisticsService {
 	public BestRoute bestRoute(String mapName, String routeFrom, String routeTo
 			, Double engine, Double litresPrice) {
 		MapWalmart map = logisticsRepository.getMap(mapName);
-		DijkstraAlgorithm algorithm = new DijkstraAlgorithm(map.getRoutes());
+		DijkstraAlgorithmForWalmart algorithm = new DijkstraAlgorithmForWalmart(map.getRoutes());
 		algorithm.execute(routeFrom);
 		BestRoute bestRoute = algorithm.getPath(routeTo);
 		bestRoute.setAmount(bestRoute.getDistance()/engine*litresPrice);

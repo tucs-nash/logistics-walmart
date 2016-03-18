@@ -12,7 +12,7 @@ import java.util.Set;
 import com.walmart.logistics.api.model.BestRoute;
 import com.walmart.logistics.api.model.Route;
 
-public class DijkstraAlgorithm {
+public class DijkstraAlgorithmForWalmart {
 
 	  private final List<Route> routes;
 	  private Set<String> settledNodes;
@@ -20,7 +20,7 @@ public class DijkstraAlgorithm {
 	  private Map<String, String> predecessors;
 	  private Map<String, Double> distance;
 
-	  public DijkstraAlgorithm(List<Route> routes) {
+	  public DijkstraAlgorithmForWalmart(List<Route> routes) {
 	    this.routes = routes;
 	  }
 
