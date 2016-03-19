@@ -14,18 +14,23 @@ O projeto foi criado com as seguintes ferramentas e o motivo do uso:
 #Para executar o programa, é só seguir os passos abaixo:
 
 - Clone o projeto do git: 
+
 	git clone https://github.com/tucs-nash/logistics-walmart.git
 
 - Importar banco de dados Oracle usando o arquivo ROUTE_DUMP.DMP dentro da pasta dump do projeto
+
 	impdp user/pass@db10g schemas=walmart_logistics dumpfile=ROUTE_DUMP.DMP logfile=impdp.log
 
 - Adicionar o driver do oracle no projeto
+
 	mvn install:install-file -Dfile={pastadoprojeto}/lib/ojdbc.jar} -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar
 
 - Instalar o projeto usando maven:
+
 	mvn clean install
 
 - Rodar o projeto
+
 	java -jar target/com.walmart.logistics.api-0.0.1-SNAPSHOT.jar
 
 # Links Web Service
