@@ -2,6 +2,11 @@ package com.walmart.logistics.api.model;
 
 import java.util.List;
 
+/**
+ * Best Route model
+ * @author DeAlmeidat
+ *
+ */
 public class BestRoute {
 	
 	private List<String> route;

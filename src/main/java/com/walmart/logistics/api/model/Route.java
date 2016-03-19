@@ -1,5 +1,10 @@
 package com.walmart.logistics.api.model;
 
+/**
+ * Route model
+ * @author DeAlmeidat
+ *
+ */
 public class Route {
 
 	private String source;

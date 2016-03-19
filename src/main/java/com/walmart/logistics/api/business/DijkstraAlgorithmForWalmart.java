@@ -12,6 +12,11 @@ import java.util.Set;
 import com.walmart.logistics.api.model.BestRoute;
 import com.walmart.logistics.api.model.Route;
 
+/**
+ * Dijkstra Algorithm adapted for the logistic Web Service
+ * @author DeAlmeidat
+ *
+ */
 public class DijkstraAlgorithmForWalmart {
 
 	  private final List<Route> routes;

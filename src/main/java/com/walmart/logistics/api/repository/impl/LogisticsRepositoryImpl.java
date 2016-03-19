@@ -13,11 +13,19 @@ import com.walmart.logistics.api.model.MapWalmart;
 import com.walmart.logistics.api.model.Route;
 import com.walmart.logistics.api.repository.LogisticsRepository;
 
+/**
+ * JDBC Repository for the logistic web service
+ * @author DeAlmeidat
+ *
+ */
 @Repository
 public class LogisticsRepositoryImpl implements LogisticsRepository {
 
 	@Autowired private JdbcTemplate jdbcTemplate;
 
+	/**
+	 * Persist map
+	 */
 	@Override
 	public void addMap(MapWalmart map) {
 		String insertMapSql = "INSERT INTO ROUTE (MAP_NAME, ROUTE_FROM, ROUTE_TO, DISTANCE) VALUES (?,?,?,?)";
@@ -27,8 +35,11 @@ public class LogisticsRepositoryImpl implements LogisticsRepository {
 		}
 	}
 
+	/**
+	 * Retrieve map by name
+	 */
 	@Override
-	public MapWalmart getMap(String mapName) {
+	public MapWalmart getMapByName(String mapName) {
 		String getMapSql = "SELECT MAP_NAME, ROUTE_FROM, ROUTE_TO, DISTANCE FROM ROUTE WHERE MAP_NAME = ?";
 		
 		List<Route> routes = jdbcTemplate.query(getMapSql, new RowMapper<Route>() {

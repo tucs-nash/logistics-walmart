@@ -2,6 +2,11 @@ package com.walmart.logistics.api.model;
 
 import java.util.List;
 
+/**
+ * Map model
+ * @author DeAlmeidat
+ *
+ */
 public class MapWalmart {
 
 	private String mapName;
